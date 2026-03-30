@@ -1,0 +1,21 @@
+# Node
+frontend/bookflow-web/node_modules/
+frontend/bookflow-web/dist/
+
+# Angular
+frontend/bookflow-web/.angular/
+frontend/bookflow-web/coverage/
+
+# .NET
+backend/BookFlow.Api/bin/
+backend/BookFlow.Api/obj/
+
+# VS Code
+.vscode/
+
+# JetBrains
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
