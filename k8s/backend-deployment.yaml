@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bookflow-backend
+  namespace: bookflow
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bookflow-backend
+  template:
+    metadata:
+      labels:
+        app: bookflow-backend
+    spec:
+      containers:
+        - name: backend
+          image: ghcr.io/HaLTeX1/bookflow-backend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ASPNETCORE_URLS
+              value: http://+:8080
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Development
+            - name: MongoDbSettings__ConnectionString
+              value: mongodb://admin:admin123@mongo:27017
+            - name: MongoDbSettings__DatabaseName
+              value: bookflowdb
+            - name: MongoDbSettings__BooksCollectionName
+              value: books
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 20
+            periodSeconds: 10

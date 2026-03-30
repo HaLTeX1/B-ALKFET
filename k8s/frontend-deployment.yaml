@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bookflow-frontend
+  namespace: bookflow
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bookflow-frontend
+  template:
+    metadata:
+      labels:
+        app: bookflow-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: ghcr.io/HaLTeX1/bookflow-frontend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
