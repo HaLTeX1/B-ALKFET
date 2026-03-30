@@ -1,0 +1,47 @@
+.page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+input {
+  padding: 10px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border: none;
+  cursor: pointer;
+  background: #ddd;
+  border-radius: 6px;
+  text-decoration: none;
+  color: black;
+}
+
+.btn.primary {
+  background: #1d4ed8;
+  color: white;
+}
+
+.error {
+  color: #dc2626;
+  margin-bottom: 12px;
+}

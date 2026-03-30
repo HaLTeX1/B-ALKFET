@@ -1,0 +1,50 @@
+<div class="page">
+  <div class="header">
+    <h1>BookFlow</h1>
+    <a routerLink="/books/new" class="btn primary">+ Új könyv</a>
+  </div>
+
+  <div class="search-bar">
+    <input [(ngModel)]="search" placeholder="Keresés címre, szerzőre, műfajra..." />
+    <button class="btn" (click)="onSearch()">Keresés</button>
+  </div>
+
+  <div *ngIf="loading">Betöltés...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <table *ngIf="!loading && result.items.length > 0">
+    <thead>
+      <tr>
+        <th>Cím</th>
+        <th>Szerző</th>
+        <th>Műfaj</th>
+        <th>Kiadás éve</th>
+        <th>Elérhető példány</th>
+        <th>Műveletek</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of result.items">
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.genre }}</td>
+        <td>{{ book.publishedYear }}</td>
+        <td>{{ book.availableCopies }}</td>
+        <td class="actions">
+          <button class="btn" (click)="editBook(book.id)">Szerkesztés</button>
+          <button class="btn danger" (click)="deleteBook(book.id)">Törlés</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!loading && result.items.length === 0">
+    Nincs találat.
+  </div>
+
+  <div class="pagination">
+    <button class="btn" (click)="prevPage()" [disabled]="result.page <= 1">Előző</button>
+    <span>Oldal: {{ result.page }} / {{ result.totalPages || 1 }}</span>
+    <button class="btn" (click)="nextPage()" [disabled]="result.page >= result.totalPages">Következő</button>
+  </div>
+</div>

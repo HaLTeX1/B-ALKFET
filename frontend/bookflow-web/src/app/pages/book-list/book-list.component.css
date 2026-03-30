@@ -1,0 +1,62 @@
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+}
+
+.header,
+.search-bar,
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  background: #ddd;
+  border-radius: 6px;
+}
+
+.btn.primary {
+  background: #1d4ed8;
+  color: white;
+  text-decoration: none;
+}
+
+.btn.danger {
+  background: #dc2626;
+  color: white;
+}
+
+.error {
+  color: #dc2626;
+  margin-bottom: 12px;
+}
