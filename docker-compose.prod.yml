@@ -1,0 +1,47 @@
+services:
+  mongo:
+    image: mongo:8
+    container_name: bookflow-mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - bookflow-net
+
+  backend:
+    image: ${BACKEND_IMAGE}
+    container_name: bookflow-backend
+    restart: unless-stopped
+    depends_on:
+      - mongo
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      MongoDbSettings__ConnectionString: mongodb://${MONGO_ROOT_USERNAME}:${MONGO_ROOT_PASSWORD}@mongo:27017
+      MongoDbSettings__DatabaseName: ${MONGO_DATABASE}
+      MongoDbSettings__BooksCollectionName: books
+    ports:
+      - "${BACKEND_PORT}:8080"
+    networks:
+      - bookflow-net
+
+  frontend:
+    image: ${FRONTEND_IMAGE}
+    container_name: bookflow-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "${FRONTEND_PORT}:80"
+    networks:
+      - bookflow-net
+
+volumes:
+  mongo_data:
+
+networks:
+  bookflow-net:
+    driver: bridge
