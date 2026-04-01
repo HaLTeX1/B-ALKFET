@@ -59,8 +59,14 @@ cd B-ALKFET
 
 ### 3. Projekt indítása
 ```bash
+With newer Docker CLI
 docker compose --env-file .env -f docker-compose.prod.yml pull
 docker compose --env-file .env -f docker-compose.prod.yml up -d
+
+With older Docker
+docker-compose --env-file .env -f docker-compose.prod.yml pull
+docker-compose --env-file .env -f docker-compose.prod.yml up -d
+
 ```
 ### 4. Elérés
 Frontend:
