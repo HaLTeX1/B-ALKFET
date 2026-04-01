@@ -79,7 +79,12 @@ http://<szerver-ip>:5245/health
 
 Fejlesztésre az alábbi paranccsal indítható az alkalmazás:
 ```bash
+With newer Docker CLI
 docker compose up --build
+
+With older Docker
+docker-compose up --build
+
 ```
 
 ## CI / CD Pipeline
