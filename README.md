@@ -1,5 +1,14 @@
 # BookFlow – Könyvkezelő rendszer
 
+## Résztvevők
+
+- Réz Levente László - RTL7M
+  - Backend elkészítése, Docker 
+- Horváth Ádám - EIY77Z
+  - Frontend elkészítése, Adatbázis
+- Józsa Sándor - AY29K6
+  - GHCR, CI/CD
+
 ## Projekt leírás
 
 A BookFlow egy egyszerű, full-stack webalkalmazás könyvek nyilvántartására és kezelésére.  
