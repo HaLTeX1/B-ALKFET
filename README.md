@@ -141,7 +141,7 @@ A frontend két fő nézetből áll:
 A .env fájl demó célokra készült, nem tartalmaz érzékeny adatokat
 A rendszer helyi hálózaton történő futtatásra optimalizált
 
-## Projekt struktóra
+## Projekt struktúra
 ```bash
 bookflow/
 ├── backend/
