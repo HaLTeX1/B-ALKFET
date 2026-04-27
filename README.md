@@ -66,6 +66,21 @@ git clone https://github.com/HaLTeX1/B-ALKFET.git
 cd B-ALKFET
 ```
 
+###3. API URL definiálása
+
+Linux
+nano frontend/bookflow-web/src/environments/environment.ts 
+apiUrl értékét átírni a megfelelő IP címre. 
+
+Windows
+notepad frontend/bookflow-web/src/environments/environment.ts 
+apiUrl értékét átírni a megfelelő IP címre. 
+
+```bash
+git clone https://github.com/HaLTeX1/B-ALKFET.git
+cd B-ALKFET
+```
+
 ### 3. Projekt indítása
 ```bash
 With newer Docker CLI
