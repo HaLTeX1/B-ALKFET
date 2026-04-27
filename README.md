@@ -66,7 +66,7 @@ git clone https://github.com/HaLTeX1/B-ALKFET.git
 cd B-ALKFET
 ```
 
-###3. API URL definiálása
+### 3. API URL definiálása
 
 Linux
 nano frontend/bookflow-web/src/environments/environment.ts 
@@ -81,7 +81,7 @@ git clone https://github.com/HaLTeX1/B-ALKFET.git
 cd B-ALKFET
 ```
 
-### 3. Projekt indítása
+### 4. Projekt indítása
 ```bash
 With newer Docker CLI
 docker compose --env-file .env -f docker-compose.prod.yml pull
@@ -92,7 +92,7 @@ docker-compose --env-file .env -f docker-compose.prod.yml pull
 docker-compose --env-file .env -f docker-compose.prod.yml up -d
 
 ```
-### 4. Elérés
+### 5. Elérés
 Frontend:
 http://<szerver-ip>:4200
 
