@@ -120,9 +120,9 @@ image-ek feltöltése GHCR-be
 
 Elérhető image-ek:
 
-ghcr.io/<felhasználónév>/bookflow-backend
+ghcr.io/haltex1/bookflow-backend
 
-ghcr.io/<felhasználónév>/bookflow-frontend
+ghcr.io/haltex1/bookflow-frontend
 
 
 ## API végpontok
